@@ -1,0 +1,191 @@
+/* @theme custom */
+/* 
+ * Custom Marp Theme Example
+ * 
+ * To use this theme, add the following to your Markdown front matter:
+ * ---
+ * marp: true
+ * theme: custom-theme
+ * ---
+ */
+
+/* Import the default theme as a base */
+@import 'default';
+
+/* Define custom variables */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --background-color: #f5f5f5;
+  --text-color: #333333;
+  --heading-color: #2c3e50;
+  --code-background: #f8f8f8;
+  --code-color: #e74c3c;
+  --quote-color: #7f8c8d;
+  --link-color: #3498db;
+  --font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+/* Apply to all slides */
+section {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  padding: 40px;
+}
+
+/* Title slide */
+section:first-of-type {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+section:first-of-type h1 {
+  font-size: 3.5em;
+  margin-bottom: 0.5em;
+}
+
+section:first-of-type p {
+  font-size: 1.5em;
+  opacity: 0.9;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-weight: bold;
+}
+
+h1 {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.2em;
+}
+
+h2 {
+  color: var(--primary-color);
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Lists */
+ul li::before {
+  color: var(--primary-color);
+}
+
+ol li::marker {
+  color: var(--primary-color);
+}
+
+/* Code blocks */
+code {
+  background-color: var(--code-background);
+  color: var(--code-color);
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+}
+
+pre {
+  background-color: var(--code-background);
+  border-left: 4px solid var(--primary-color);
+  padding: 1em;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--quote-color);
+  color: var(--quote-color);
+  font-style: italic;
+  padding-left: 1em;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5em;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 0.5em;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Footer with page number */
+section::after {
+  color: var(--primary-color);
+  font-size: 0.6em;
+  content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+  right: 30px;
+  bottom: 20px;
+}
+
+/* Custom classes */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.large-text {
+  font-size: 1.5em;
+}
+
+.highlight {
+  background-color: rgba(255, 255, 0, 0.3);
+  padding: 0.2em;
+}
+
+.box {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  margin: 1em 0;
+}
+
+/* Background variations */
+section.blue {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+section.green {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+section.red {
+  background-color: var(--accent-color);
+  color: white;
+}

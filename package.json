@@ -1,0 +1,24 @@
+{
+  "name": "marp-slide-environment",
+  "version": "1.0.0",
+  "description": "Development environment for creating presentations with Marp",
+  "main": "index.js",
+  "scripts": {
+    "start": "marp --server --config marp.config.js",
+    "build": "marp --html --pdf --pptx --config marp.config.js",
+    "build:html": "marp --html --config marp.config.js",
+    "build:pdf": "marp --pdf --config marp.config.js",
+    "build:pptx": "marp --pptx --config marp.config.js",
+    "watch": "marp --watch --server --config marp.config.js"
+  },
+  "keywords": [
+    "marp",
+    "markdown",
+    "presentation",
+    "slides"
+  ],
+  "dependencies": {
+    "@marp-team/marp-cli": "^3.0.0"
+  },
+  "devDependencies": {}
+}
