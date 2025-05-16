@@ -1,6 +1,6 @@
 {
 	"name": "Marp Development Environment",
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
+	"dockerFile": "Dockerfile",
 	"mounts": [
 		"source=${localEnv:HOME}/.ssh/,target=/home/node/.ssh/,type=bind,consistency=cached",
 		"source=${localEnv:HOME}/.aws/,target=/home/node/.aws/,type=bind,consistency=cached"

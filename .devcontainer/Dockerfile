@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node:18
+FROM mcr.microsoft.com/devcontainers/javascript-node:22-bookworm
 
 # Install Chrome for Marp PDF/PPTX export
 RUN apt-get update && apt-get install -y \
@@ -10,3 +10,9 @@ RUN apt-get update && apt-get install -y \
 # Set environment variables for Chrome
 ENV CHROME_PATH=/usr/bin/chromium
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+
+# 必要に応じて追加のパッケージをインストール
+# RUN apt-get update && apt-get install -y <必要なパッケージ>
+
+# デフォルトのユーザーは node
+USER node
